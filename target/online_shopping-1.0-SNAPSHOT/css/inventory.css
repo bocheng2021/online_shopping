@@ -1,0 +1,255 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #F5F5F5
+}
+/*Header position*/
+.header{
+    width: 1200px;
+    height: 50px;
+    margin: 25px auto;
+}
+/*menu location*/
+.header .home{
+    float: left;
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 260px;
+}
+
+.header .home a{
+    color: white;
+}
+
+.header .home button:hover, .header .home button:focus, .header .home button:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.header .home button{
+    width: 60px;
+    height: 30px;
+    margin-left: 5px;
+    float: right;
+    flex: 1;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 7px;
+    border-style: none;
+    transition-duration: 0.4s
+}
+
+.header .home button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+/*---------------logo set---------------*/
+/*set the location for the logo*/
+.header .logo{
+    float: left;
+    position: relative;
+    width: 150px;
+    height: 10px;
+    margin-top: -130px;
+    margin-left: -450px;
+}
+/*-------------------------Content area design-------------------------*/
+
+.content{
+    width: 1200px;
+    margin: 25px auto;
+    height: auto;
+}
+
+.content .welcome{
+    height: 50px;
+    color: #FFFFFF;
+    background: black;
+    box-shadow:0 0 10px #000;
+    border-top:2px solid black;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.content .goods table{
+    width: 100%;
+    min-height: 200px;
+    color: black;
+    border-radius: 5px 5px 0 0;
+    border-collapse:collapse;
+    border: black;
+    box-shadow:0 0 10px #000;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.content .goods table .header{
+    padding: 0 10px;
+    border: 1px solid black;
+    border-right: 0;
+    text-shadow: 1px 1px 1px black;
+    color: #666;
+    background-color: #cccccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.content .goods table td{
+    border: 1px solid black;
+}
+
+.content .goods table .second_type{
+    padding: 0 10px;
+    border: 1px solid black;
+    border-right: 0;
+    text-shadow: 1px 1px 1px black;
+    color: #666;
+    background-color: #cccccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.content .form
+{
+    width: 100%;
+    height: auto;
+}
+
+.content .Inventory_Update
+{
+    margin-top:30px;
+    height: 50px;
+    color: #FFFFFF;
+    background: black;
+    box-shadow:0 0 10px #000;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.content .table_content
+{
+    height: 50px;
+    color: #FFFFFF;
+    background: grey;
+    box-shadow:0 0 10px #000;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.content .table_content .select_list
+{
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.content .table_content .select_list option
+{
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.content .table_content .form_input{
+    border-radius: 3px;
+    background-color: #f2f2f2 ;
+    box-shadow: 0 2px 2px #D6D6D6;
+    border:none;
+    padding: 6px 3px 3px 6px;
+    box-sizing:border-box;
+    position:relative;
+}
+
+.content .table_content .form_btn
+{
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    flex: 1;
+    font-weight: bolder;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    border-style: none;
+    transition-duration: 0.4s
+}
+
+.content .table_content .form_btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.content .table_content .form_btn:hover, .content .table_content .form_btn:focus, .content .table_content .form_btn:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.content .table_content .form_btn:before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    border: #e1e1e1 solid 4px;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: top, right, bottom, left;
+    transition-property: top, right, bottom, left;
+}
+
+.content .alert
+{
+    height: 50px;
+    color: red;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+/*-------------------------Footer area design-------------------------*/
+.footer{
+    width: 1200px;
+    height: 100px;
+    margin: 60px auto;
+    border-top:1px solid #ccc;
+    overflow: hidden;
+}
+.footer p{
+    text-align: center;
+    line-height: 80px;
+}
+.footer p span{
+    color: #ff1490;
+}
+table{
+    font-size: 15px;
+    color: gray;
+    font-family: Arial, serif;
+}
+tr{
+    height: 35px;/
+}
