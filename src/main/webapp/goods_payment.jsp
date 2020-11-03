@@ -83,11 +83,6 @@
                         else
                         {
                             enough_amount.add(true);
-                            database.CreateOrder(id,Integer.parseInt(goodsAmounts[i]), sqlDate, Double.parseDouble
-                                    (prices[i]),user_name,tools.get_seller_name_by_id(tools.get_goods_seller_by_goods_name
-                                    (goodsName[i])), database.get_address_by_name(user_name));
-                            /*update the amount in the storage.*/
-                            cart.Alter_storage_amount(id,Integer.parseInt(goodsAmounts[i]));
                         }
                     }
                     /*use the key of amount to show that if the user has enough amount.*/
@@ -101,6 +96,29 @@
                     enough_amount.clear();
                     if (flag)
                     {
+                        for(int i=0;i<num;i++)
+                        {
+                            /*create order and finish the payment..*/
+                            String id=tools.get_goods_id_by_name(goodsName[i]);
+                            /*make sure the amounts in the storage is more than the cart needs*/
+                            if (Integer.parseInt(goodsAmounts[i])>tools.get_goods_amount_by_id(id))
+                            {
+                                /*change the key of amount*/
+                                enough_amount.add(false);
+                            }
+                            else
+                            {
+                                String seller_name=tools.get_seller_name_by_id(tools.get_goods_seller_by_goods_name
+                                        (goodsName[i]));
+                                enough_amount.add(true);
+                                database.CreateOrder(id,Integer.parseInt(goodsAmounts[i]), sqlDate, Double.parseDouble
+                                        (prices[i]),user_name,seller_name,database.get_address_by_name(user_name));
+                                /*update the amount in the storage.*/
+                                cart.Alter_storage_amount(id,Integer.parseInt(goodsAmounts[i]));
+                                database.updateUserMoney(seller_name,database.get_money_by_user_name(seller_name)
+                                        +Double.parseDouble(prices[i]));
+                            }
+                        }
                         /* if success, change the user money.*/
                         database.updateUserMoney(user_name,money-Double.parseDouble(total_money_for_cart));
                         /*after change the user money, clear the cart.*/
