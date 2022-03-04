@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.database_manage_tool" %>
 <%@ page import="database.PageContent" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 <body>
 <%!
     String[] names =new String[5];
-    DBUtil database=new DBUtil();
+    database_manage_tool database=new database_manage_tool();
     /*variable to get the parameter of the cart*/
     String cart_param="";
     String user_content="Sign up/ in";
@@ -216,9 +216,9 @@
 
     </div>
 </div>
-<!-- --------------------页脚板块-------------------- -->
+<!-- --------------------foot-------------------- -->
 <div class="footer">
-    <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+    <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>
 </body>
 </html>

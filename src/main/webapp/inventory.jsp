@@ -166,7 +166,7 @@
 </script>
 <!-- --------------------footer panel-------------------- -->
 <div class="footer">
-    <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+    <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>
 </body>
 </html>

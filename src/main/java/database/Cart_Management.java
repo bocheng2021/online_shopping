@@ -3,14 +3,12 @@ package database;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Cart_Management {
     private Connection c;
 
     public Cart_Management() {
-        c = database_connection.getLocalConnection(0);
+        c = database_connector.getLocalConnection();
     }
 
     /*The method to get result format*/

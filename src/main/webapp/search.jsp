@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.database_manage_tool" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 <%!
-    DBUtil database_tools=new DBUtil();
+    database_manage_tool database_tools=new database_manage_tool();
     String user_content="Sign up/ in";
     String user_address="login.jsp";
 %>
@@ -124,7 +124,7 @@
 </script>
 <!-- --------------------footer page-------------------- -->
 <div class="footer">
-    <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+    <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>
 </body>
 </html>

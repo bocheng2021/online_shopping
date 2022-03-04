@@ -9,7 +9,7 @@ public class Goods_Management {
     private Connection c;
     public Goods_Management()
     {
-        c =database_connection.getLocalConnection(0);
+        c = database_connector.getLocalConnection();
     }
     /*The method to get result format*/
     public List<List> getResult(ResultSet rset) {

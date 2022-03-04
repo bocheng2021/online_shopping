@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.database_manage_tool" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -13,7 +13,7 @@
     String name ="";
     String user_content="Sign up/ in";
     String user_address="login.jsp";
-    DBUtil database=new DBUtil();
+    database_manage_tool database=new database_manage_tool();
     Cart_Management cart=new Cart_Management();
 %>
 <%
@@ -119,7 +119,7 @@
         </div>
     </div>
     <div class="final">
-        <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+        <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
     </div>
 </div>
 </body>

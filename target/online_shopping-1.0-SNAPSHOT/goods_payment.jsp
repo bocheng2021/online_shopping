@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.database_manage_tool" %>
 <%@ page import="java.util.List" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page import="java.text.DecimalFormat" %>
@@ -15,7 +15,7 @@
 </head>
 <body>
 <%!
-    DBUtil database=new DBUtil();
+    database_manage_tool database=new database_manage_tool();
     Cart_Management cart=new Cart_Management();
     Goods_Management tools=new Goods_Management();
     /*variable for detail information about name and amount of goods in the cart*/
@@ -244,7 +244,7 @@
 </div>
 <!-- --------------------footer panel-------------------- -->
 <div class="footer">
-    <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+    <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>
 </body>
 </html>

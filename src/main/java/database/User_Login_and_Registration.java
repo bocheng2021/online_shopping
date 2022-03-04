@@ -14,7 +14,7 @@ public class User_Login_and_Registration {
     MyCryptoTool cryptoTool=new MyCryptoTool();
     public User_Login_and_Registration()
     {
-        c =database_connection.getLocalConnection(0);
+        c = database_connector.getLocalConnection();
     }
     /**
      * verify the password of the related account

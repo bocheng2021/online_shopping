@@ -3,28 +3,19 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class database_connection {
+public class database_connector {
     /**
      * Connect to local database and return the conenction.
      */
-    public static Connection getLocalConnection(int type) {
+    public static Connection getLocalConnection() {
         //Modify the following code for your own MySql database.
         String databaseAddress;
         String databaseUsername;
         String databasePassword;
-        if (type == 0) {
-            databaseAddress = "jdbc:mysql://localhost:3306/ddbms?serverTimezone=Asia/Shanghai";
-            databaseUsername = "root";
-            databasePassword = "ybc1234";
-        } else if (type == 1) {
-            databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
-            databaseUsername = "root";
-            databasePassword = "335827";
-        } else {
-            databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
-            databaseUsername = "root";
-            databasePassword = "1326";
-        }
+        databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
+        databaseUsername = "root";
+        databasePassword = "ybc1234";
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
 

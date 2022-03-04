@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DBUtil {
+public class database_manage_tool {
     private Connection c;
-    public DBUtil()
+    public database_manage_tool()
     {
-        c =database_connection.getLocalConnection(0);
+        c = database_connector.getLocalConnection();
     }
     /**
      * @param rset JDBC ResultSet.
@@ -107,7 +107,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
@@ -129,7 +129,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -152,7 +152,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -175,7 +175,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -192,7 +192,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -209,7 +209,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -226,7 +226,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -243,7 +243,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -264,7 +264,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -284,7 +284,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -303,7 +303,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     /**
@@ -320,7 +320,7 @@ public class DBUtil {
         {
             System.err.println("Error in retrieving data.");
             ex.printStackTrace();
-            Logger.getLogger(DBUtil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(database_manage_tool.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -378,7 +378,7 @@ public class DBUtil {
     }
 
     public static void main(String[] args) {
-        DBUtil database=new DBUtil();
+        database_manage_tool database=new database_manage_tool();
         String[] result_names;
         String search_input = "cookie";
         List<List> result=database.Search(search_input);

@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.database_manage_tool" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 <%!
-    DBUtil database=new DBUtil();
+    database_manage_tool database=new database_manage_tool();
     String [] goods_content=new String[2];
     String name="";
     String id="";
@@ -89,7 +89,7 @@
 </div>
 <!-- --------------------页脚板块-------------------- -->
 <div class="footer">
-    <p class="p2">HiShop© 2020 POWERED BY <span>Group6</span></p>
+    <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>
 </body>
 </html>
