@@ -1,5 +1,7 @@
 package database;
 
+import myBean.DBConnectorBean;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,10 @@ public class Cart_Management {
     private Connection c;
 
     public Cart_Management() {
-        c = database_connector.getLocalConnection();
+        String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
+        String databaseUsername = "root";
+        String databasePassword = "ybc1234";
+        c = DBConnectorBean.getLocalConnection(databaseAddress, databaseUsername, databasePassword);
     }
 
     /*The method to get result format*/

@@ -1,24 +1,24 @@
-package database;
+package myBean;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class database_connector {
+public class DBConnectorBean extends BaseBean{
+    private String databaseAddress;
+    private String databaseUsername;
+    private String databasePassword;
+
+    public DBConnectorBean() {}
     /**
      * Connect to local database and return the conenction.
      */
-    public static Connection getLocalConnection() {
+    public static Connection getLocalConnection(String databaseAddress,
+                                                String databaseUsername,
+                                                String databasePassword)
+    {
         //Modify the following code for your own MySql database.
-        String databaseAddress;
-        String databaseUsername;
-        String databasePassword;
-        databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
-        databaseUsername = "root";
-        databasePassword = "ybc1234";
-        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
-
             Connection connection = DriverManager.getConnection(databaseAddress, databaseUsername, databasePassword);
             System.out.println("Database connected.");
             return connection;
@@ -28,7 +28,7 @@ public class database_connector {
         }
     }
 
-    public void close(Connection c) {
+    public void close (Connection c) {
         if (c != null) {
             try {
                 c.close();

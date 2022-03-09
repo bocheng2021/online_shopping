@@ -1,7 +1,7 @@
 package database;//package {Add package name}
 
 import encrypt.MyCryptoTool;
-
+import myBean.DBConnectorBean;
 import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -14,7 +14,10 @@ public class User_Login_and_Registration {
     MyCryptoTool cryptoTool=new MyCryptoTool();
     public User_Login_and_Registration()
     {
-        c = database_connector.getLocalConnection();
+        String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
+        String databaseUsername = "root";
+        String databasePassword = "ybc1234";
+        c = DBConnectorBean.getLocalConnection(databaseAddress, databaseUsername, databasePassword);
     }
     /**
      * verify the password of the related account

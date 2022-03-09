@@ -1,4 +1,5 @@
 package database;//package {Add package name}
+import myBean.DBConnectorBean;
 import java.sql.*; //Importing Java package that deals with database.
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -10,7 +11,10 @@ public class database_manage_tool {
     private Connection c;
     public database_manage_tool()
     {
-        c = database_connector.getLocalConnection();
+        String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
+        String databaseUsername = "root";
+        String databasePassword = "ybc1234";
+        c = DBConnectorBean.getLocalConnection(databaseAddress, databaseUsername, databasePassword);
     }
     /**
      * @param rset JDBC ResultSet.
