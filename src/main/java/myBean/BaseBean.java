@@ -1,11 +1,12 @@
 package myBean;
 
+import java.awt.*;
 import java.beans.*;
 import java.beans.beancontext.BeanContext;
 import java.io.IOException;
 import java.lang.reflect.Field;
 
-public class BaseBean extends MyBean {
+public class BaseBean extends MyBean{
     private final Field[] fields = this.getClass().getDeclaredFields();
     private final PropertyChangeSupport changes = new PropertyChangeSupport(this);
 
@@ -106,6 +107,16 @@ public class BaseBean extends MyBean {
     @Override
     public PropertyDescriptor[] getPropertyDescriptors() {
         return new PropertyDescriptor[0];
+    }
+
+    @Override
+    public Image getIcon(int iconKind) {
+        return null;
+    }
+
+    @Override
+    public int getDefaultPropertyIndex() {
+        return -1;
     }
 
     @Override

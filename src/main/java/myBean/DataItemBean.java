@@ -1,8 +1,0 @@
-package myBean;
-
-public class DataItemBean extends BaseBean{
-    private enum DataTypeValue{TINYINT,SMALLINT,MEDIUMINT,INT,INTEGER,BIGINT,FLOAT,DOUBLE,DECIMAL};
-    private enum DataTypeDate{DATE,TIME,YEAR,DATETIME,TIMESTAMP};
-    private enum DataTypeString{CHAR,VARCHAR,TINYBLOB,TINYTEXT,BLOB,TEXT,MEDIUMBLOB,MEDIUMTEXT,LONGBLOB,LONGTEXT};
-
-}

@@ -1,5 +1,6 @@
 package myBean;
 
+import java.awt.*;
 import java.beans.BeanDescriptor;
 import java.beans.EventSetDescriptor;
 import java.beans.MethodDescriptor;
@@ -11,4 +12,7 @@ public interface BeanInfo {
     EventSetDescriptor[] getEventSetDescriptors();
     int getDefaultEventIndex();
     PropertyDescriptor[] getPropertyDescriptors();
+    Image getIcon(int iconKind);
+    int getDefaultPropertyIndex();
+
 }

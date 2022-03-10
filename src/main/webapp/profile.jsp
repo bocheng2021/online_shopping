@@ -1,4 +1,4 @@
-<%@ page import="database.database_manage_tool" %>
+<%@ page import="database.DBUtil" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 <%!
-    database_manage_tool database=new database_manage_tool();
+    DBUtil database=new DBUtil();
     String [] goods_content=new String[2];
     String name="";
     String id="";

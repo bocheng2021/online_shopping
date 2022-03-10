@@ -1,4 +1,4 @@
-<%@ page import="database.database_manage_tool" %>
+<%@ page import="database.DBUtil" %>
 <%@ page import="java.util.List" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page import="java.text.DecimalFormat" %>
@@ -15,7 +15,7 @@
 </head>
 <body>
 <%!
-    database_manage_tool database=new database_manage_tool();
+    DBUtil database=new DBUtil();
     Cart_Management cart=new Cart_Management();
     Goods_Management tools=new Goods_Management();
     /*variable for detail information about name and amount of goods in the cart*/

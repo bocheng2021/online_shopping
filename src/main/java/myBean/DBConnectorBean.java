@@ -4,19 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnectorBean extends BaseBean{
-    private String databaseAddress;
-    private String databaseUsername;
-    private String databasePassword;
+    private static String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
+    private static String databaseUsername = "root";
+    private static String databasePassword = "ybc1234";
 
     public DBConnectorBean() {}
     /**
      * Connect to local database and return the conenction.
      */
-    public static Connection getLocalConnection(String databaseAddress,
-                                                String databaseUsername,
-                                                String databasePassword)
+    public static Connection getLocalConnection()
     {
-        //Modify the following code for your own MySql database.
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection connection = DriverManager.getConnection(databaseAddress, databaseUsername, databasePassword);
@@ -34,7 +31,6 @@ public class DBConnectorBean extends BaseBean{
                 c.close();
                 System.out.println("Database connection closed.");
             } catch (Exception e) {
-                /* ignore close errors */
                 System.err.println("Database cannot be closed!");
                 e.printStackTrace();
             }

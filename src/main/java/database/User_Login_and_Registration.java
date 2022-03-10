@@ -1,6 +1,7 @@
-package database;//package {Add package name}
+package database;
 
 import encrypt.MyCryptoTool;
+import myBean.BaseBean;
 import myBean.DBConnectorBean;
 import java.sql.*;
 import java.util.List;
@@ -8,16 +9,13 @@ import java.util.ArrayList;
 /**
  * This class is designed for user login and registration
  * */
-public class User_Login_and_Registration {
+public class User_Login_and_Registration extends BaseBean {
 
-    private Connection c;
+    private final Connection c;
     MyCryptoTool cryptoTool=new MyCryptoTool();
     public User_Login_and_Registration()
     {
-        String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
-        String databaseUsername = "root";
-        String databasePassword = "ybc1234";
-        c = DBConnectorBean.getLocalConnection(databaseAddress, databaseUsername, databasePassword);
+        c = DBConnectorBean.getLocalConnection();
     }
     /**
      * verify the password of the related account

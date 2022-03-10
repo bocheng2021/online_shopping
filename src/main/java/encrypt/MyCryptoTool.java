@@ -1,10 +1,12 @@
 package encrypt;
 
+import myBean.BaseBean;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class MyCryptoTool {
+public class MyCryptoTool extends BaseBean {
     private final String mySecreteIvStr = "6349712734217525";
     private final String mySecreteKey = "2c6a51ca6ca2sc51sac6";
     /**
@@ -65,7 +67,6 @@ public class MyCryptoTool {
 
         return new SecretKeySpec(arrayBytes16, "AES");
     }
-
     
     /**
      * main method for testing the crypto functions.

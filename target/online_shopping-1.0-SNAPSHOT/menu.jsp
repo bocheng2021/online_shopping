@@ -1,4 +1,4 @@
-<%@ page import="database.database_manage_tool" %>
+<%@ page import="database.DBUtil" %>
 <%@ page import="database.PageContent" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 <body>
 <%!
     String[] names =new String[5];
-    database_manage_tool database=new database_manage_tool();
+    DBUtil database=new DBUtil();
     /*variable to get the parameter of the cart*/
     String cart_param="";
     String user_content="Sign up/ in";

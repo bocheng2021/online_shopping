@@ -1,4 +1,4 @@
-<%@ page import="database.database_manage_tool" %>
+<%@ page import="database.DBUtil" %>
 <%@ page import="database.PageContent" %>
 <%@ page import="database.Cart_Management" %>
 <%@ page import="java.util.List" %>
@@ -35,7 +35,7 @@
     String user_content="Sign up/ in";
     String user_address="login.jsp";
     /*call the interface to get the data from database.*/
-    database_manage_tool database=new database_manage_tool();
+    DBUtil database=new DBUtil();
     List<List> cart_info;
     int num=1;
     PageContent page_tool=new PageContent();

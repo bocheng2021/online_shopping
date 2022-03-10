@@ -1,5 +1,6 @@
 package database;
 
+import myBean.BaseBean;
 import myBean.DBConnectorBean;
 
 import java.sql.*;
@@ -7,14 +8,11 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Goods_Management {
-    private Connection c;
+public class Goods_Management extends BaseBean {
+    private final Connection c;
     public Goods_Management()
     {
-        String databaseAddress = "jdbc:mysql://localhost:3306/DDBMS?serverTimezone=UTC";
-        String databaseUsername = "root";
-        String databasePassword = "ybc1234";
-        c = DBConnectorBean.getLocalConnection(databaseAddress, databaseUsername, databasePassword);
+        c = DBConnectorBean.getLocalConnection();
     }
     /*The method to get result format*/
     public List<List> getResult(ResultSet rset) {

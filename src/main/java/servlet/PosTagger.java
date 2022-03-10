@@ -1,6 +1,8 @@
 package servlet; /**
 * sending request to a web Service and getting resposes.
 */
+import myBean.BaseBean;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class PosTagger {
+public class PosTagger extends BaseBean {
     public String callPosTaggerPost(String myMessage) {
         
 		String serviceUrl = "{Add Service URL, e.g. http://www.abc.cn/}";
