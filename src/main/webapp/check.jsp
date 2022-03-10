@@ -1,4 +1,4 @@
-<%@ page import="database.User_Login_and_Registration" %>
+<%@ page import="database.UserSystemBean" %>
 <%@ page import="encrypt.MyCryptoTool" %>
 <%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -8,7 +8,7 @@
 <body>
 <%!
     MyCryptoTool cryptoTool=new MyCryptoTool();
-    User_Login_and_Registration db_tools =new User_Login_and_Registration();
+    UserSystemBean db_tools =new UserSystemBean();
 %>
 <%
     /*the below is used for check is the request parameter of param is null or not.*/

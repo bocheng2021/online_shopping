@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="database.Goods_Management" %>
+<%@ page import="WebComponent.Inventory" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -9,83 +9,16 @@
 </head>
 <body>
 <%!
-    Goods_Management tools=new Goods_Management();
-    String name="";
-    int num=0;
-    String[] goodsName;
-    String[] amount;
-    String[] goods_description;
-    String[] prices;
+    Inventory inventory = new Inventory();
 %>
 <%
-    /*this is a variable for the goods update.*/
-    String alert="";
-    name= (String) request.getSession().getAttribute("username");
-    List<List> result=tools.get_goods_title_by_seller_name(name);
-
-    String show_or_not="yes";
-    /*To prevent the initial number is not enough.*/
-    num=result.size()+1;
-
+    String username = (String) request.getSession().getAttribute("username");
     /*get the parameter from the check page.*/
-    String param=request.getParameter("param");
-
-    /*initialization of the order details.*/
-    if(num>1)
-    {
-        /*initial the data.*/
-        goodsName = new String[num];
-        goods_description = new String[num];
-        amount = new String[num];
-        prices = new String[num];
-        goodsName[0]="Title";
-        goods_description[0]="Description";
-        amount[0]="Amount";
-        prices[0]="Price";
-        /*to store data in the string array.*/
-        for (int i=0;i<num-1;i++)
-        {
-            goodsName[i+1]= (String) result.get(i).get(0);
-            goods_description[i+1]= (String) result.get(i).get(1);
-            amount[i+1]= (String) result.get(i).get(2);
-            prices[i+1]= (String) result.get(i).get(3);
-        }
-    }
-    /*the condition that there is no goods in the inventory.*/
-    else
-    {
-        show_or_not="no";
-        goodsName = new String[1];
-        goods_description = new String[1];
-        amount = new String[1];
-        prices = new String[1];
-        goodsName[0]="Title";
-        goods_description[0]="Description";
-        amount[0]="Amount";
-        prices[0]="Price";
-    }
-    /*use string to get the parameter from the data pass form the check page.*/
-    if (param!=null)
-    {
-        /*use switch to show the alert message to tell the manager if the process is successful or not.*/
-        switch (param) {
-            case "success":
-                alert = "Success!";
-                break;
-            case "wrongValue":
-                alert = "* Your input value of price or amount is wrong!";
-                break;
-            case "wrongType":
-                alert = "* Amount or price input type is wrong!";
-                break;
-            case "no_item":
-                alert = "* You don't have inventory items.";
-                break;
-        }
-    }
+    String param = request.getParameter("param");
+    String show_or_not= inventory.core(username, param);
 %>
 <div class="header">
-    <!-- 设置logo -->
+    <!-- set logo -->
     <div class="logo" style="width:150px">
         <img style="transform:scale(0.3)" src="images/logo.png" alt="">
     </div>
@@ -102,19 +35,19 @@
     <div class="goods">
         <table>
             <tr class="header">
-                <th><%=goodsName[0]%></th>
-                <th><%=goods_description[0]%></th>
-                <th><%=amount[0]%></th>
-                <th><%=prices[0]%></th>
+                <th><%=((String[])inventory.get("goodsName"))[0]%></th>
+                <th><%=((String[])inventory.get("goods_description"))[0]%></th>
+                <th><%=((String[])inventory.get("amount"))[0]%></th>
+                <th><%=((String[])inventory.get("prices"))[0]%></th>
             </tr>
             <%
-                for(int i=0;i<num-1;i++){
+                for(int i=0;i<(int)inventory.get("num")-1;i++){
             %>
             <tr>
-                <td><%=goodsName[i+1] %></td>
-                <td><%=goods_description[i+1]%></td>
-                <td><%=amount[i+1]%></td>
-                <td><%=prices[i+1]%></td>
+                <td><%=((String[])inventory.get("goodsName"))[i+1] %></td>
+                <td><%=((String[])inventory.get("goods_description"))[i+1]%></td>
+                <td><%=((String[])inventory.get("amount"))[i+1]%></td>
+                <td><%=((String[])inventory.get("prices"))[i+1]%></td>
             </tr>
             <%} %>
         </table>
@@ -128,9 +61,10 @@
             <label for="update">Items</label>
             <select name="update_name" class="select_list" id="update">
                 <%
-                    for(int i=0;i<num-1;i++){
+                    for(int i=0;i<(int)inventory.get("num")-1;i++){
                 %>
-                <option value="<%=goodsName[i+1]%>"><%=goodsName[i+1]%></option>
+                <option value="<%=((String[])inventory.get("goodsName"))[i+1]%>">
+                    <%=((String[])inventory.get("goodsName"))[i+1]%></option>
                 <%
                     }
                 %>
@@ -145,7 +79,7 @@
         </div>
     </form>
     <div class="alert">
-        <%=alert%>
+        <%=inventory.get("alert")%>
     </div>
 </div>
 <script>

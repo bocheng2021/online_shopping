@@ -1,5 +1,5 @@
-<%@ page import="database.DBUtil" %>
-<%@ page import="database.Cart_Management" %>
+<%@ page import="database.DBUtilBean" %>
+<%@ page import="WebComponent.GoodsPage" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -10,53 +10,16 @@
 </head>
 <body>
 <%!
-    String name ="";
-    String user_content="Sign up/ in";
-    String user_address="login.jsp";
-    DBUtil database=new DBUtil();
-    Cart_Management cart=new Cart_Management();
+    GoodsPage goodsPage = new GoodsPage();
+    DBUtilBean database=new DBUtilBean();
 %>
 <%
-    /*confirm is used to set the flag for the cart alert.*/
-    String confirm="false";
-
+    String confirm ="false";
+    String hasUser = (String) request.getSession().getAttribute("username");
     /*the below two variables are used for the cart addition.*/
     String param=request.getParameter("param");
     String cart_param=request.getParameter("cart_param");
-    /* record the user name.*/
-    String user_name;
-    name="images/category/"+param+".png";
-    /*---The method to check if the user login or not.---*/
-    if(request.getSession().getAttribute("username")!=null)
-    {
-        user_name= (String) request.getSession().getAttribute("username");
-        user_content="Log out";
-        user_address="logout.jsp";
-        if(cart_param!=null)
-        {
-            /*The condition that the user is a seller.*/
-            if (cart.verify_Identity_by_name_in_string_type(user_name).equals("0"))
-            {
-                confirm="seller";
-            }
-            else
-            {
-                cart.create_cart_order(user_name,name,1);
-                confirm="true";
-            }
-        }
-    }
-    else
-    {
-        if(cart_param!=null)
-        {
-            /*the condition for there is no user log in.*/
-            confirm="no_user";
-        }
-
-        user_content="Sign up/ in";
-        user_address="login.jsp";
-    }
+    confirm = goodsPage.core(param, cart_param, hasUser);
 %>
 <script>
     const confirm = "<%=confirm%>";
@@ -85,7 +48,7 @@
     <!-- set user log in or log out. -->
     <div class="auth">
         <ul>
-            <li><a href="<%=user_address%>"><%=user_content%></a></li>
+            <li><a href="<%=goodsPage.get("user_address")%>"><%=goodsPage.get("user_content")%></a></li>
         </ul>
     </div>
 </div>
@@ -94,21 +57,21 @@
         -- Selected goods --
     </div>
     <div class="goods">
-        <img src="<%=name%>" height="500" width="500" alt="">
+        <img src="<%=goodsPage.get("name")%>" height="500" width="500" alt="">
     </div>
     <div class="description">
         <div class="name">
-            <%=database.getSingleNameByPhoto(name)%>
+            <%=database.getSingleNameByPhoto((String) goodsPage.get("name"))%>
         </div>
-        <div class="price">¥<%=database.getSinglePriceByPhoto(name)%></div>
+        <div class="price">¥<%=database.getSinglePriceByPhoto((String) goodsPage.get("name"))%></div>
         <div class="amount">
-            The available amount is:<%=database.getAmountByPhoto(name)%>
+            The available amount is:<%=database.getAmountByPhoto((String) goodsPage.get("name"))%>
         </div>
         <div class="details">
             <div class="bg">
                 Goods Detail
             </div>
-            <div class="det"><%=database.getDetailsByPhoto(name)%></div>
+            <div class="det"><%=database.getDetailsByPhoto((String) goodsPage.get("name"))%></div>
         </div>
         <div class="buy">
             <div class="img_btn">

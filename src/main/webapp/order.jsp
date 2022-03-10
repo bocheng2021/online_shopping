@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="database.Goods_Management" %>
+<%@ page import="WebComponent.OrderBean" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,52 +18,12 @@
 </head>
 <body>
 <%!
-    Goods_Management tools=new Goods_Management();
-    String name="";
-    String[] goodsName;
-    String[] amounts;
-    String[] address;
-    String[] prices;
+    OrderBean orderBean = new OrderBean();
 
 %>
 <%
-    int num;
-    String description="";
-    name= (String) request.getSession().getAttribute("username");
-    List<List> result=tools.get_details_by_user_name(name);
-    /*To prevent the initial number is not enough.*/
-    num=result.size()+1;
-    /*initialization of the order details.*/
-    if(num>1)
-    {
-        goodsName = new String[num];
-        amounts = new String[num];
-        address = new String[num];
-        prices = new String[num];
-        goodsName[0]="Items";
-        amounts[0]="Amount";
-        address[0]="Address";
-        prices[0]="Total Price";
-        for (int i=0;i<num-1;i++)
-        {
-            goodsName[i+1]= tools.get_goods_name_by_id((String) result.get(i).get(0));
-            amounts[i+1]= (String) result.get(i).get(1);
-            address[i+1]= (String) result.get(i).get(2);
-            prices[i+1]= (String) result.get(i).get(3);
-        }
-    }
-    else
-    {
-        goodsName = new String[1];
-        amounts = new String[1];
-        address = new String[1];
-        prices = new String[1];
-        description="no_order";
-        goodsName[0]="Items";
-        amounts[0]="Amount";
-        address[0]="Address";
-        prices[0]="Total Price";
-    }
+    String username= (String) request.getSession().getAttribute("username");
+    String description = orderBean.core(username);
 %>
 <script type="javascript">
     const confirm = "<%=description%>";
@@ -89,19 +49,19 @@
     <div class="goods">
         <table>
             <tr class="header">
-                <th><%=goodsName[0]%></th>
-                <th><%=amounts[0]%></th>
-                <th><%=address[0]%></th>
-                <th><%=prices[0]%></th>
+                <th><%=((String[])orderBean.get("goodsName"))[0]%></th>
+                <th><%=((String[])orderBean.get("amounts"))[0]%></th>
+                <th><%=((String[])orderBean.get("address"))[0]%></th>
+                <th><%=((String[])orderBean.get("prices"))[0]%></th>
             </tr>
             <%
-                for(int i=0;i<num-1;i++){
+                for(int i=0;i<(int)orderBean.get("num")-1;i++){
             %>
             <tr>
-                <td align="center"><%=goodsName[i+1] %></td>
-                <td align="center"><%=amounts[i+1]%></td>
-                <td align="center"><%=address[i+1]%></td>
-                <td align="center"><%=prices[i+1]%></td>
+                <td align="center"><%=((String[])orderBean.get("goodsName"))[i+1] %></td>
+                <td align="center"><%=((String[])orderBean.get("amounts"))[i+1]%></td>
+                <td align="center"><%=((String[])orderBean.get("address"))[i+1]%></td>
+                <td align="center"><%=((String[])orderBean.get("prices"))[i+1]%></td>
             </tr>
             <%} %>
         </table>

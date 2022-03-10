@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="WebComponent.ProfileBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,35 +8,15 @@
 </head>
 <body>
 <%!
-    DBUtil database=new DBUtil();
-    String [] goods_content=new String[2];
-    String name="";
-    String id="";
-    String type="";
-    String address="";
+    ProfileBean profileBean = new ProfileBean();
 %>
 <%
-    String balance="";
-    name= (String) request.getSession().getAttribute("username");
-    id=database.get_ID_By_Name(name);
-    balance= String.valueOf(database.get_money_by_user_name(name));
-    if(database.verifyIdentity(id))
-    {
-        type="Seller";
-        goods_content[0]="Your Inventory";
-        goods_content[1]="inventory.jsp";
+    String username = (String) request.getSession().getAttribute("username");
+    String balance = profileBean.core(username);
 
-    }
-    else
-    {
-        type="Buyer";
-        goods_content[0]="Your Order";
-        goods_content[1]="order.jsp";
-    }
-    address=database.get_address_by_id(id);
 %>
 <div class="header">
-    <!-- 设置logo -->
+    <!-- set for logo -->
     <div class="logo" style="width:150px">
         <img style="transform:scale(0.3)" src="images/logo.png" alt="">
     </div>
@@ -61,23 +41,23 @@
         <table>
             <tr>
                 <td>User Name</td>
-                <td><%=name%></td>
+                <td><%=profileBean.get("name")%></td>
             </tr>
             <tr class="second">
                 <td>User ID</td>
-                <td><%=id%></td>
+                <td><%=profileBean.get("id")%></td>
             </tr>
             <tr>
                 <td>User Type</td>
-                <td><%=type%></td>
+                <td><%=profileBean.get("type")%></td>
             </tr>
             <tr class="second">
                 <td>Default Address</td>
-                <td><%=address%></td>
+                <td><%=profileBean.get("address")%></td>
             </tr>
             <tr>
-                <td><%=goods_content[0]%></td>
-                <td><button><a href="<%=goods_content[1]%>">Check</a></button></td>
+                <td><%=((String[])profileBean.get("goods_content"))[0]%></td>
+                <td><button><a href="<%=((String[])profileBean.get("goods_content"))[1]%>">Check</a></button></td>
             </tr>
             <tr class="second">
                 <td>Balance of account</td>
@@ -87,7 +67,7 @@
         </table>
     </div>
 </div>
-<!-- --------------------页脚板块-------------------- -->
+<!-- --------------------footer-------------------- -->
 <div class="footer">
     <p class="p2">HiShop© 2022 POWERED BY <span>Bocheng</span></p>
 </div>

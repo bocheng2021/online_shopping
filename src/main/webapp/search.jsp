@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtil" %>
+<%@ page import="database.DBUtilBean" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 <%!
-    DBUtil database_tools=new DBUtil();
+    DBUtilBean database_tools=new DBUtilBean();
     String user_content="Sign up/ in";
     String user_address="login.jsp";
 %>

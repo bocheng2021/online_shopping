@@ -1,4 +1,4 @@
-<%@ page import="database.Goods_Management" %>
+<%@ page import="database.GoodsManagementBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <body>
 <%!
     /*initial the management tools of back-end.*/
-    Goods_Management management_tools=new Goods_Management();
+    GoodsManagementBean management_tools=new GoodsManagementBean();
 %>
 <%
     /*get the goods name*/
