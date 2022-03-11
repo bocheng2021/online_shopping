@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtilBean" %>
+<%@ page import="DBComponent.DBUtilBean" %>
 <%@ page import="WebComponent.GoodsPage" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

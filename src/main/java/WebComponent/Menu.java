@@ -1,6 +1,6 @@
 package WebComponent;
 
-import database.CartManagementBean;
+import DBComponent.CartManagementBean;
 import myBean.WebBean;
 
 public class Menu extends WebBean {

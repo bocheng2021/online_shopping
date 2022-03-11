@@ -1,8 +1,8 @@
 package WebComponent;
 
-import database.CartManagementBean;
-import database.DBUtilBean;
-import database.PageContent;
+import DBComponent.CartManagementBean;
+import DBComponent.DBUtilBean;
+import DBComponent.PageContent;
 import myBean.WebBean;
 
 import java.text.DecimalFormat;

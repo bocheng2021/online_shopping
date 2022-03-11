@@ -1,12 +1,12 @@
-package database;
+package DBComponent;
 
-import myBean.BaseBean;
 import myBean.DBConnectorBean;
+import myBean.DatabaseBean;
+
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
-public class CartManagementBean extends BaseBean {
+public class CartManagementBean extends DatabaseBean {
     private final Connection c;
     private String query;
     private ResultSet rs;
@@ -16,27 +16,6 @@ public class CartManagementBean extends BaseBean {
         c = DBConnectorBean.getLocalConnection();
     }
 
-    /*The method to get result format*/
-    public List<List> getResult(ResultSet rset) {
-        List<List> result = new ArrayList<>();
-        List<String> row;
-        try {
-            int colNum = rset.getMetaData().getColumnCount();
-            while (rset.next()) {
-                row = new ArrayList<String>();
-
-                for (int i = 1; i <= colNum; i++) {
-                    row.add(rset.getString(i));
-                }
-
-                result.add(row);
-            }
-            return result;
-        } catch (Exception e) {
-            System.err.println("Error in retrieving data.");
-        }
-        return null;
-    }
     /**
      * Get SID from table cart using User_Name
      **/

@@ -1,5 +1,5 @@
 package WebComponent;
-import database.CartManagementBean;
+import DBComponent.CartManagementBean;
 import myBean.WebBean;
 
 public class GoodsPage extends WebBean {

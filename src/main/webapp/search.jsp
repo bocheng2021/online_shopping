@@ -1,4 +1,4 @@
-<%@ page import="database.DBUtilBean" %>
+<%@ page import="DBComponent.DBUtilBean" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -28,7 +28,7 @@
         /*let number equal to the result size.*/
         num=result.size();
         result_names=new String[result.size()];
-        /*get the name from the database.*/
+        /*get the name from the DBComponent.*/
         for (int i=0;i<result.size();i++)
         {
             result_names[i]=((result.get(i).get(0).toString()).replace("images/category/", "").

@@ -1,6 +1,6 @@
 package WebComponent;
 
-import database.GoodsManagementBean;
+import DBComponent.GoodsManagementBean;
 import myBean.WebBean;
 
 import java.util.List;

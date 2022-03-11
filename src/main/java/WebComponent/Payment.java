@@ -1,8 +1,8 @@
 package WebComponent;
 
-import database.CartManagementBean;
-import database.DBUtilBean;
-import database.GoodsManagementBean;
+import DBComponent.CartManagementBean;
+import DBComponent.DBUtilBean;
+import DBComponent.GoodsManagementBean;
 import myBean.WebBean;
 
 import javax.servlet.ServletException;

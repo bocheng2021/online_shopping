@@ -1,4 +1,4 @@
-package database;
+package DBComponent;
 import java.util.Arrays;
 
 public class PageContent {

@@ -52,7 +52,7 @@
             <%} %>
         </table>
     </div>
-    <!-- --------------------use form to pass the update to the back end database.-------------------- -->
+    <!-- --------------------use form to pass the update to the back end DBComponent.-------------------- -->
     <form class="form-inline pull-right" id="inventory_update_tool" action="inventory_check.jsp" method="post">
         <div class="Inventory_Update">
             Inventory Update

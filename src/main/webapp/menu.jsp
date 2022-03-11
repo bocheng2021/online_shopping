@@ -1,5 +1,5 @@
-<%@ page import="database.DBUtilBean" %>
-<%@ page import="database.PageContent" %>
+<%@ page import="DBComponent.DBUtilBean" %>
+<%@ page import="DBComponent.PageContent" %>
 <%@ page import="WebComponent.Menu" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

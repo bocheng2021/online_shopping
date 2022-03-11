@@ -1,15 +1,16 @@
-package database;
+package DBComponent;
 
 import encrypt.MyCryptoTool;
-import myBean.BaseBean;
+
 import myBean.DBConnectorBean;
+import myBean.DatabaseBean;
+
 import java.sql.*;
 import java.util.List;
-import java.util.ArrayList;
 /**
  * This class is designed for user login and registration
  * */
-public class UserSystemBean extends BaseBean {
+public class UserSystemBean extends DatabaseBean {
 
     private final Connection c;
     private final MyCryptoTool cryptoTool=new MyCryptoTool();
@@ -57,30 +58,6 @@ public class UserSystemBean extends BaseBean {
             System.err.println("Error in retrieving data.");
             return false;
         }
-    }
-
-    public List<List> getResult(ResultSet rset) {
-
-        List<List> result = new ArrayList<>();
-        List<String> row;
-
-        try {
-            int colNum = rset.getMetaData().getColumnCount();
-            while (rset.next()) {
-                row = new ArrayList<String>();
-
-                for (int i = 1; i <= colNum; i++) {
-                    row.add(rset.getString(i));
-                }
-
-                result.add(row);
-            }
-            return result;
-        } catch (SQLException e) {
-            System.err.println("Error in retrieving data.");
-            e.printStackTrace();
-        }
-        return null;
     }
 
 /*The method to register the user.*/

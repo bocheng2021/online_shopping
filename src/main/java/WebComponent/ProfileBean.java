@@ -1,6 +1,6 @@
 package WebComponent;
 
-import database.DBUtilBean;
+import DBComponent.DBUtilBean;
 import myBean.WebBean;
 
 public class ProfileBean extends WebBean {

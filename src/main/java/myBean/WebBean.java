@@ -2,10 +2,7 @@ package myBean;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import java.awt.*;
 import java.beans.*;
-import java.beans.beancontext.BeanContext;
-import java.io.IOException;
 import java.lang.reflect.Field;
 
 public class WebBean extends BaseBean{

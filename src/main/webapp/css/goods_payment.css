@@ -172,3 +172,8 @@ a{
 .footer p span{
     color: #ff1490;
 }
+table{
+    font-size: 15px;
+    color: gray;
+    font-family: Arial, serif;
+}

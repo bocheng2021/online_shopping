@@ -1,4 +1,4 @@
-<%@ page import="database.GoodsManagementBean" %>
+<%@ page import="DBComponent.GoodsManagementBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

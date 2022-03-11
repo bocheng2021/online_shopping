@@ -1,14 +1,12 @@
-package database;
+package DBComponent;
 
-import myBean.BaseBean;
 import myBean.DBConnectorBean;
-
+import myBean.DatabaseBean;
 import java.sql.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
-public class GoodsManagementBean extends BaseBean {
+public class GoodsManagementBean extends DatabaseBean {
     private final Connection c;
     private String query;
     private PreparedStatement stmt;
@@ -18,30 +16,7 @@ public class GoodsManagementBean extends BaseBean {
     {
         c = DBConnectorBean.getLocalConnection();
     }
-    /*The method to get result format*/
 
-    public List<List> getResult(ResultSet rset) {
-        List<List> result = new ArrayList<>();
-        List<String> row;
-
-        try {
-            int colNum = rset.getMetaData().getColumnCount();
-            while (rset.next()) {
-                row = new ArrayList<String>();
-
-                for (int i = 1; i <= colNum; i++) {
-                    row.add(rset.getString(i));
-                }
-
-                result.add(row);
-            }
-            return result;
-        } catch (SQLException e) {
-            System.err.println("Error in retrieving data.");
-            e.printStackTrace();
-        }
-        return null;
-    }
     /*The method to get goods name by user id*/
     public String get_goods_name_by_id(String id){
         try

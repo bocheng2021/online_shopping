@@ -1,4 +1,4 @@
-<%@ page import="database.UserSystemBean" %>
+<%@ page import="DBComponent.UserSystemBean" %>
 <%@ page import="encrypt.MyCryptoTool" %>
 <%@ page contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
