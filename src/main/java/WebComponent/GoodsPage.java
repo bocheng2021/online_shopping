@@ -1,8 +1,8 @@
 package WebComponent;
 import database.CartManagementBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
-public class GoodsPage extends BaseBean {
+public class GoodsPage extends WebBean {
     String name ="";
     String user_content="Sign up/ in";
     String user_address="login.jsp";

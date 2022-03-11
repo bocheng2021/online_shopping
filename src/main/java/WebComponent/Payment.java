@@ -3,7 +3,7 @@ package WebComponent;
 import database.CartManagementBean;
 import database.DBUtilBean;
 import database.GoodsManagementBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Payment extends BaseBean {
+public class Payment extends WebBean {
     DBUtilBean database=new DBUtilBean();
     CartManagementBean cart=new CartManagementBean();
     GoodsManagementBean tools=new GoodsManagementBean();

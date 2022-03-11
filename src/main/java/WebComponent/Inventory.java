@@ -1,11 +1,11 @@
 package WebComponent;
 
 import database.GoodsManagementBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
 import java.util.List;
 
-public class Inventory extends BaseBean {
+public class Inventory extends WebBean {
     GoodsManagementBean tools=new GoodsManagementBean();
     /*this is a variable for the goods update.*/
     String alert;

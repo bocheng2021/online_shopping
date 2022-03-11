@@ -28,7 +28,7 @@ public class Testing {
 
     public void RunDatabaseTest()
     {
-        DBUtil database=new DBUtil();
+        DBUtilBean database=new DBUtilBean();
         String[] result_names;
         String search_input = "cookie";
         List<List> result=database.Search(search_input);

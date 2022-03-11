@@ -1,9 +1,9 @@
 package WebComponent;
 
 import database.CartManagementBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
-public class Menu extends BaseBean {
+public class Menu extends WebBean {
     String[] names =new String[5];
     /*variable to get the parameter of the cart*/
     String user_content="Sign up/ in";

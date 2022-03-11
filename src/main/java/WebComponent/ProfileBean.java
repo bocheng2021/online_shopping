@@ -1,9 +1,9 @@
 package WebComponent;
 
 import database.DBUtilBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
-public class ProfileBean extends BaseBean {
+public class ProfileBean extends WebBean {
     DBUtilBean database=new DBUtilBean();
     String [] goods_content=new String[2];
     String id="";

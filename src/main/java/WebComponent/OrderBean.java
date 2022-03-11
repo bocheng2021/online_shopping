@@ -1,11 +1,11 @@
 package WebComponent;
 
 import database.GoodsManagementBean;
-import myBean.BaseBean;
+import myBean.WebBean;
 
 import java.util.List;
 
-public class OrderBean extends BaseBean {
+public class OrderBean extends WebBean {
     GoodsManagementBean tools=new GoodsManagementBean();
     String[] goodsName;
     String[] amounts;

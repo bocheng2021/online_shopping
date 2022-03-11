@@ -3,12 +3,12 @@ package WebComponent;
 import database.CartManagementBean;
 import database.DBUtilBean;
 import database.PageContent;
-import myBean.BaseBean;
+import myBean.WebBean;
 
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class MainPage extends BaseBean {
+public class MainPage extends WebBean {
     /*---initial the whole page.---*/
     String [] names=new String[6];
     /*variable for detail information about name and amount of goods in the cart*/
