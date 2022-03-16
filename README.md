@@ -1,2 +1,2 @@
 # online_shopping
-project for implement component model
+project for component model
